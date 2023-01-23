@@ -1,0 +1,19 @@
+{
+    "name": "vaddshah/php_crud_clean",
+    "authors": [
+        {
+            "name": "vaddshah",
+            "email": "heinzwe2626@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^9.48"
+    },
+    "autoload": {
+        "files": ["helpers.php"],
+        "psr-4": {
+            "Utils\\" : "Utils/",
+            "App\\" : "app/"
+        }
+    }
+}

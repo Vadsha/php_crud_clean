@@ -1,6 +1,6 @@
 <?php
 
-     require_once "controller.php";
+     require_once "vendor/autoload.php";
      $data= new Student();
      $student = $data->edit($_GET['id']);
 ?>

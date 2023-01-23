@@ -1,8 +1,12 @@
 <?php
-     require_once "controller.php";
 
-     $data = new Student();
+     require_once "vendor/autoload.php";
+
+     use Utils\DB as UtilDb;
+
+     $data = new UtilDb();
      $students = $data->index();
+
 ?>
 
 <!DOCTYPE html>
@@ -24,24 +28,24 @@
 </head>
 <body>
      <div class="w-screen">
-          <table class="table bg-gray-200 w-1/2 mx-auto mt-8">
+          <table class="table bg-gray-200 w-2/3 mx-auto mt-8 rounded-xl text-gray-600">
                <tr class="mx-2">
                     <th>ID</th>
                     <th>NAME</th>
                     <th>EMAIL</th>
                     <th>CLASS</th>
-                    <th class="text-lg text-blue-400">
-                         <a href="create.php" class="ml-4">CREATE</a>
+                    <th class="text-lg text-green-500">
+                         <a href="create.php" class="ml-3.5 hover:text-gray-400 hover:text-white hover:bg-green-400 rounded px-1">CREATE</a>
                     </th>
                </tr>
                <?php foreach($students as $student) : ?>
-               <tr>
+               <tr class="hover:bg-gray-300">
                     <td><?php echo $student->id; ?>.</td>
                     <td><?php echo $student->name; ?></td>
                     <td><?php echo $student->email; ?></td>
                     <td><?php echo $student->class; ?></td>
                     <td>
-                         <a href="show.php?id=<?php echo $student->id; ?>" class="cursor-pointer  px-3  m-2 ml-4 font-bold text-white bg-gray-500 rounded right-4 top-10 hover:bg-gray-700">show</a>
+                         <a href="show.php?id=<?php echo $student->id; ?>" class="cursor-pointer  px-3  m-2 ml-4 font-bold text-white bg-gray-400 rounded right-4 top-10 hover:bg-gray-700">show</a>
                     </td>
                </tr>
                <?php endforeach; ?>
